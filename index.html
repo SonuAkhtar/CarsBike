@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Page UI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+</head>
+<body>
+
+    <div class="wrapper">
+        <header>
+            <div class="logo">
+                <h2>C<span>&</span>B</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li>
+                        <a href="#">New Arrived</a>
+                    </li>
+                    <li>
+                        <a href="#">Vintage</a>
+                    </li>
+                    <li>
+                        <a href="#">Luxury</a>
+                    </li>
+                    <li>
+                        <a href="#">Sports</a>
+                    </li>
+                    <li>
+                        <a href="#">Customized</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <div class="and">&</div>
+        <div class="content">
+            <div class="men common">
+                <div class="img">
+                    <img src="https://www.thesupercarblog.com/wp-content/uploads/2019/03/McLaren-720S-Spider-by-MSO-1.jpg" alt="image-1">
+                    <div class="img-overlay"></div>
+                </div>
+                <div class="text">
+                    <h1>Cars</h1>
+                    <h5>Design</h5>
+                </div>
+                <div class="btn">
+                    <a href="#">EXPLORE NOW</a>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </div>
+            <div class="women common">
+                <div class="img">
+                    <img src="https://c4.wallpaperflare.com/wallpaper/466/594/530/ducati-monster-821-stealth-2019-4k-wallpaper-preview.jpg" alt="image-2">
+                    <div class="img-overlay"></div>
+                </div>
+                <div class="text">
+                    <h1>Bikes</h1>
+                    <h5>Design</h5>
+                </div>
+                <div class="btn">
+                    <a href="#">EXPLORE NOW</a>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/gsap.min.js"></script>
+    <script>
+        const tl_img = gsap.timeline({ease: "Power1.easeInOut"})
+
+        .to(".men .img-overlay",{
+            duration: 1,
+            y:"100%"
+        })
+
+        .to(".women .img-overlay",{
+            duration: 1,
+            y:"100%"
+        },"-=.7")
+
+        .from(".img img",{
+            opacity: 0,
+            duration: 1,
+            scale: 1.2,
+            stagger: .2
+        })
+
+        .from(".text h1",{
+            opacity: 0,
+            duration: 1,
+            y: 50
+        })
+
+        .from(".text h5",{
+            opacity: 0,
+            duration: 1,
+            y: 50
+        },"-=.5")
+
+        .to(".content",{
+            y: "80px"
+        });
+
+        const tl_header = gsap.timeline({ease: "Power1.easeInOut"})
+        .from("header",{
+            delay: 3,
+            duration: 1,
+            y: -80,
+        })
+        .from("header .logo",{
+            duration: 1,
+            y: -80
+        })
+        .from("header .menu li",{
+            duration: 1,
+            y: -80,
+            stagger: .1
+        },"-=.3")
+
+    </script>
+</body>
+</html>
